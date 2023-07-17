@@ -1,6 +1,6 @@
 name = "OneTwoMany"
 uuid = "762dc654-8631-413a-a342-372a7419ad9d"
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 
