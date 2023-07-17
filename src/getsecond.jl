@@ -21,7 +21,7 @@ getsecond(A::AbstractArray) = A[begin+1]
 
 @inline getsecond(pair::Pair) = pair.second
 
-getsecond(str::AbstractString) = str[begin+1]
+getsecond(str::AbstractString) = str[nextind(str, firstindex(str))]
 
 function getsecond(itr)
     _, state1 = _valid_iterate_output_2(iterate(itr))

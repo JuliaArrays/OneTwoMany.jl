@@ -24,7 +24,11 @@ end
 
 @inline first_and_rest(pair::Pair) = (pair.first, (pair.second,))
 
-first_and_rest(str::AbstractString) = (str[begin+0], str[begin+1:end])
+function first_and_rest(str::AbstractString)
+    i1 = firstindex(str)
+    i2 = nextind(str, i1)
+    (str[i1], str[i2:end])
+end
 
 function first_and_rest(itr)
     x1, state1 = _valid_iterate_output_1(iterate(itr))
@@ -55,7 +59,12 @@ end
 
 @inline first_second_rest(pair::Pair) = (pair.first, pair.second, ())
 
-first_second_rest(str::AbstractString) = (str[begin+0], str[begin+1], str[begin+2:end])
+function first_second_rest(str::AbstractString)
+    i1 = firstindex(str)
+    i2 = nextind(str, i1)
+    i3 = nextind(str, i2)
+    (str[i1], str[i2], str[i3:end])
+end    
 
 function first_second_rest(itr)
     x1, state1 = _valid_iterate_output_2(iterate(itr))
