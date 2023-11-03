@@ -5,7 +5,7 @@ using Test
 
 include("testcases.jl")
 
-@testset "hello_world" begin
+@testset "first_second_rest" begin
     @test @inferred(first_and_rest(A)) == (41, [42, 3, 5, 9])
     @test @inferred(first_and_rest(tpl)) == (41, (42, 3, 5, 9))
     @test @inferred(first_and_rest(nt)) == (41, (b = 42, c = 3, d = 5, e = 9))
