@@ -11,5 +11,6 @@ module OneTwoMany
 include("util.jl")
 include("getsecond.jl")
 include("first_second_rest.jl")
+include("arg1_arg2.jl")
 
 end # module
